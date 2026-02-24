@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-[#06070d] text-slate-100 antialiased;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.35;
+  animation: floatBlob 16s ease-in-out infinite;
+}
+
+.blob-a {
+  width: 30rem;
+  height: 30rem;
+  background: #7c3aed;
+  top: -8rem;
+  left: -6rem;
+}
+
+.blob-b {
+  width: 24rem;
+  height: 24rem;
+  background: #06b6d4;
+  right: -6rem;
+  top: 20%;
+  animation-delay: -5s;
+}
+
+.blob-c {
+  width: 22rem;
+  height: 22rem;
+  background: #f43f5e;
+  bottom: -7rem;
+  left: 30%;
+  animation-delay: -9s;
+}
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(148, 163, 184, 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+@keyframes floatBlob {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -20px, 0) scale(1.08);
+  }
+}
